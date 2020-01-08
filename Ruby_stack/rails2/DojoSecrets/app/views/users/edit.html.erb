@@ -1,0 +1,16 @@
+
+    <% if flash[:notice] %>
+	<% flash[:notice].each do |error| %>
+        <p class ="bg-danger"><%= error %></p>
+    <% end %>
+	<% end %>
+
+
+<form action="/users/<%= @user.id %>" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="hidden" name="_method" value="patch">
+    <p>Name:<input type="text" name="user[name]" value = "<%= @user.name %>"/></p>
+    <p>Email:<input type="text" name="user[email]" value = "<%= @user.email %>"/></p>
+    <input type="submit" value="Edit"/>
+</form>
+<a href="/users">Home</a>  |  <a href="/users/<%= @user.id %>">Show</a>

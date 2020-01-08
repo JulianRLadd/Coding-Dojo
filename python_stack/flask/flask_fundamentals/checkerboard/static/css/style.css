@@ -1,0 +1,20 @@
+.morph{
+    width: 500px;
+    height: 900px;
+    display:inline-block;
+}
+
+
+div.dark{
+    background-color:#556b2f; 
+    width:75px;
+    height:75px;
+    display:inline-block;
+}
+
+div.light{
+    background-color:lightgrey; 
+    width:75px;
+    height:75px;
+    display:inline-block;
+}

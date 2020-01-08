@@ -1,0 +1,10 @@
+<h1>Fates#edit</h1>
+<p>Find me in app/views/fates/edit.html.erb</p>
+
+
+<form action="/users" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>Name:<input type="text" name="name" placeholder="<%=@user.name%>"> </p>
+    <p>Age:<input type="integer" name="age" placeholder="<%=@user.age%>"> </p>
+    <input type='submit' value='Save User'>
+</form>

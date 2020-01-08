@@ -1,0 +1,36 @@
+def countdown(num):
+    list=[]
+    for i in range(num,-1,-1):
+        list.append(i)
+        print (i)
+    return list
+
+def printReturn(lst):
+    print (lst[0])
+    return lst[1]
+
+
+def firstPlusLength (lst):
+    return len(lst)+lst[0]
+print (firstPlusLength([4,3,5,7,4]))
+
+
+def valuesGreater2nd (lst):
+    secondlst=[]
+    count = 0
+    for i in range(0,len(lst),1):
+        if lst[i] > lst[1]:
+            secondlst.append(lst[i])
+            count=count +1
+    print ("Values: "+ str(count))
+    if len(secondlst)<2:
+        return False    
+    return secondlst
+print (valuesGreater2nd([4,3,5,2,-6]))
+
+
+def thisLengthThatValue(size,value):
+    lst = []   
+    for i in range(size):
+        lst.append(value)
+    return lst

@@ -1,0 +1,17 @@
+/* *{
+    padding: 0px;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+} */
+
+
+.addBox{
+    display: inline-block;
+    margin-right: 100px;
+}
+
+.library{
+    display: inline-block;
+    vertical-align: top;
+}

@@ -1,0 +1,28 @@
+*{
+    padding: 0px;
+    margin:0px;
+    outline:0px;
+    border:0px;
+}
+
+body{
+    background-color: black;
+}
+.wrapper{
+    padding: 230px;
+    text-align: center;
+    width: auto;
+    height: 600px;
+    background-image: url(../img/time.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1{
+    font-style: italic;
+    font-size: 50px;
+}
+
+p{
+    font-size: 25px;
+}

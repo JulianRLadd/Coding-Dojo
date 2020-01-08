@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Details</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to your collection, {{user.first_name}}</h1>
+        <a href="/books/">Home</a>
+        <a href="/books/bests">Your Favorites</a>
+        <a href="/logout/">Log Out</a>
+    </div>
+    <div>
+        <h1>{{book.title}}</h1>
+        {%if book not in fav_books%}
+            <a href="/books/{{book.id}}/favorite">Add to Favorites</a>
+        {%endif%}
+        {%if book not in owned_books%}
+            <p>Added by: {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}</p>
+            <p>Added on: {{book.created_at}}</p>
+            <p>Last updated on: {{book.updated_at}}</p>
+            <p>Description: {{book.desc}}</p>
+        {%else%}
+            <form action="update_book/" method="POST">
+                {% csrf_token %}
+                <p>Title: <input type="textarea" name="title" value="{{book.title}}"></p>
+                <p>Added by: {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}</p>
+                <p>Added on: {{book.created_at}}</p>
+                <p>Last updated on: {{book.updated_at}}</p>
+                <p>Description:</p>
+                <textarea name="description" cols="13" rows="5">{{book.desc}}</textarea>
+                <input type="hidden" name="b_id" value="{{book.id}}">
+                <input type="submit" value="Update">
+                <a href="/books/{{book.id}}/delete">Delete Book</a>
+            </form>
+        {%endif%}
+    </div>
+    <div>
+        <h1>Users Who Like This Book:</h1>
+        <ul>
+            {%for user in favored_by %}
+                <li>{{user.first_name}} {{user.last_name}}</li>
+                {%if user.id == user_id%}
+                    <a href="/books/{{book.id}}/unfavorite">Un-Favorite</a>
+                {%endif%}
+            {%endfor%}
+        </ul>
+    </div>
+</body>
+</html>

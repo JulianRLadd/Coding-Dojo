@@ -1,0 +1,15 @@
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Cat Details</title>
+    <body>
+        <h2>Here's everything about this cat :</h2>
+        <% for (var cat of files) { %>
+            <h3>Name: <%= cat.name %></h3>
+            <h4>Age: <%= cat.age %></h4>
+            <h4>Hobbies: <%= cat.hobbies %></h4>
+            <h4>Favorite Food: <%= cat.fav_food %></h4>
+            <h4>Wanted For: <%= cat.wanted_for %></h4>
+        <% } %>
+        <hr>
+    </body>
+</html>

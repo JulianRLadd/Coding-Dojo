@@ -1,0 +1,94 @@
+def biggie(lst):
+    for i in range(len(lst)):
+        if lst[i]>0:
+            lst[i]="big"
+    return lst
+print (biggie([2,4,-8,5-9,4,223]))
+
+
+def countPositives(lst):
+    count = 0
+    for i in range(len(lst)):
+        if lst[i]>0:
+            count = count+1
+    lst[len(lst)-1] = count
+    return lst
+print (countPositives([2,4,-8,5,-9,4,223]))
+
+
+def sumTotal(lst):
+    sum = 0
+    for i in range(len(lst)):
+        sum = sum+ int(lst[i])
+    return sum
+print (sumTotal([2,4,8,5,9,4,223]))
+
+
+def average(lst):
+    sum = 0
+    for i in range(len(lst)):
+        sum = sum+ int(lst[i])
+    avg = sum/len(lst)
+    return avg
+print (average([2,4,8,5,9,4,223]))
+
+
+def length(lst):
+    return len(lst)
+print (length([2,4,8,5,9,4,223]))
+
+
+def minimum(lst):
+    if len(lst) == 0:
+        return False
+    min = lst[0]
+    for i in range(len(lst)):
+        if min > lst[i]:
+            min=lst[i]
+    return min
+print (minimum([2,3,8,-5,9,4,22]))
+
+
+def maximum(lst):
+    if len(lst) == 0:
+        return False
+    max = lst[0]
+    for i in range(len(lst)):
+        if max < lst[i]:
+            max=lst[i]
+    return max
+print (maximum([2,3,8,-5,9,4,22]))
+
+
+def ultAnalysis(lst):
+    ult ={'sumTotal': 0, 'average': 0, 'minimum': 0,'maximum':0, 'length': 0}
+    sum = 0
+    max = lst[0]
+    min = lst[0]
+    for i in range(len(lst)):
+        if min > lst[i]:
+            min=lst[i]
+        if max < lst[i]:
+            max=lst[i]
+        sum = sum+ int(lst[i])
+    avg = sum/len(lst)
+    ult['sumTotal'] = sum
+    ult['average'] = avg
+    ult['minimum'] = min
+    ult['maximum'] = max
+    ult['length'] = len(lst)
+    return ult
+print (ultAnalysis([2,3,8,5,56,4,22]))
+
+
+def reverse(lst):
+    end = 1
+    temp = 0
+    half = int(len(lst)/2)
+    for i in range(half):
+        temp = lst[i]
+        lst[i] = lst[len(lst)-end]
+        lst[len(lst)-end] = temp
+        end = end + 1
+    return lst
+print (reverse([2,3,8,5,56,4,22]))

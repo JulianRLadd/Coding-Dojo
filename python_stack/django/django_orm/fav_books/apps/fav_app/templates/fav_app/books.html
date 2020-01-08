@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'fav_app/css/style.css' %}">
+    <title>Books-A-Trillion</title>
+</head>
+<body>  
+    <div class="header">
+        <h1>Welcome to your collection, {{user.first_name}}</h1>
+        <a href="/books/">Home</a>
+        <a href="/books/bests">Your Favorites</a>
+        <a href="/logout/">Log Out</a>
+    </div>
+    <div class="addBox">
+    <h2>Add a Favorite Book</h2>
+    {%if messages%}
+    <u class="messages">
+        {%for message in messages%}
+            <li {%if message.tags%} class="{{message.tags}}"{%endif%}>{{message}}</li>
+        {%endfor%}
+    </ul>
+    {%endif%}
+    <form action="addBook/" method="post">
+        {% csrf_token %}
+            <p>Title</p>
+            <input type="text" name="title"/>
+            <p>Description:</p>
+            <input type="text" name="description"/>
+            <br>
+            <input type="submit" value="Add"/>
+    </form>
+    </div>
+    <div class="library">
+        <h2>All Books</h2>
+            {%for book in all_books%}
+            <a href="{{book.id}}">{{book.title}}</a> <p>(Uploaded by {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}})</p>
+            {%if book not in fav_books%}
+            <a href="/books/{{book.id}}/favorite">Add to Favorites</a> <br> <br>
+            {%else%}
+            <p>This is one of your favorites</p>
+            {%endif%}
+            {%endfor%}
+        </div>
+</body>
+</html>

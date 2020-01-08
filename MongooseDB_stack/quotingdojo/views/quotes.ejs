@@ -1,0 +1,15 @@
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body class="text-center">
+        <div class="border border-primary d-inline-block">
+            <h2>Here are the awesome quotes!</h2>
+                <%for (quotes of quote) {%>
+                    <div class="border border-success d-inline-block mb-2">
+                            <p class="font-weight-bold"><%=quotes.quote%></p>
+                            <p class="text-danger"> - <%=quotes.name %></p>
+                            <p class="text-primary"><%=quotes.createdAt %></p>
+                    </div>
+                <% }%>
+        </div>
+    </body>
+</html>

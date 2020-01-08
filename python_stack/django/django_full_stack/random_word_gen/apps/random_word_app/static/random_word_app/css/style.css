@@ -1,0 +1,54 @@
+*{
+    padding: 0px;
+    margin:0px;
+    outline:0px;
+    border:0px;
+}
+
+
+body{
+    width:auto;
+    height:700px;
+    background-image: url(../img/nums.png);
+}
+
+.wrapper{
+    margin-top: 200px;
+    background-color: #0da304;
+    text-align: center;
+    padding-bottom: 30px;
+    
+}
+
+.num_box{
+    padding: 30px;
+    margin-left: 350px;
+    width:600px;
+    text-align: center;
+    border: solid black 5px;
+    font-size: 70px;
+    margin-bottom: 10px;
+
+}
+
+.generate {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: black;
+        background-color: grey;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+}
+.generate:hover {background-color: #3e8e41
+}
+.generate:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+}

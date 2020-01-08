@@ -1,0 +1,19 @@
+<h1>Secrets</h1>
+<% if @secrets %>
+  <% @secrets.each do |e| %>
+    <%= e.content %>
+    <p><%= e.likes.length %> likes 
+        <% unless e.liking_users.include?current_user %>
+        <form action="/likes/new" method="post">
+        <input type="hidden" name="authenticity_token" value = "<%=form_authenticity_token%>">
+        <input type="hidden" name="secret_id" value = "<%=e.id%>">
+        <input type="submit" value="Like"/>
+        </form>
+         <% else %>
+         <a href="/likes/<%= e.id %>" data-method="delete">Unlike</a>
+         <% end %>
+    <% unless e.user.id != current_user.id%>
+        <a href="/secrets/<%= e.id %>" data-method="delete">Delete</a>
+    <% end %></p>
+  <% end %>
+<% end %>

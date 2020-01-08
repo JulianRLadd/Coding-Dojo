@@ -1,0 +1,39 @@
+*{
+    padding: 0px;
+    margin:0px;
+    outline:0px;
+    border:0px;
+}
+
+.header{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+body{
+    background-image: url(../img/counter.jpg)
+}
+
+.box{
+    margin-top: 200px;
+    margin-left: 450px;
+    width: 450px;
+    text-align: center;
+    display: inline-block;
+    background-color: rgba(255,255,255, 0.7);
+}
+
+form{
+    display: inline-block;
+    padding: 5px;
+}
+
+.add2{
+    padding: 4px;
+    background-color: #01e760;
+}
+
+.reset{
+    padding: 4px;
+    background-color: #f3595b;
+}

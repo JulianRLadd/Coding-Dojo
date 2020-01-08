@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time Display (GCT)</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'time_display_app/css/style.css' %}">    
+    <script src="{% static 'time_display_app/js/script.js' %}"></script>
+
+</head>
+<body>
+    <div class = "wrapper">
+            <h1>Time Is Fleeting</h1>
+            {%load static%}
+            <p>{{time}}</p>
+    </div>
+</body>
+</html>
+
+

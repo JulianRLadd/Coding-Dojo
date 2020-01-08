@@ -1,0 +1,35 @@
+Dojos.objects.create(name="House Fire", city="Phoenix", state="AZ")
+Dojos.objects.create(name="House Rain", city="Seattle", state="WA")
+Dojos.objects.create(name="House Wind", city="Chicago", state="IL")
+
+dojosOld=Dojos.objects.all()
+
+dojosOld.delete()
+
+Dojos.objects.create(name="House Volcano", city="Honolulu", state="HI")
+Dojos.objects.create(name="House Ice", city="Juneau", state="AK")
+Dojos.objects.create(name="House Sun", city="Miami", state="FL")
+
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=1),first_name="Ryu",last_name="Yogan")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=1),first_name="Tora",last_name="Moyasu")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=1),first_name="Kuren",last_name="Kemuri")
+
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=2),first_name="Pansa",last_name="Hyozan")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=2),first_name="Kirin",last_name="Kori")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=2),first_name="Raion",last_name="Yuki")
+
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=3),first_name="Kitsune",last_name="Akari")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=3),first_name="Uma",last_name="Hoshi")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=3),first_name="Hebi",last_name="Netsu")
+
+Ninjas.objects.filter(dojo_id = 1)
+
+Ninjas.objects.filter(dojo_id = 3)
+
+newDojos = Dojos.objects.all()
+
+newDojos.objects.desc = "something about the dojo"
+2
+desc = models.TextField(null=True)
+
+Dojos.objects.create(name="House Tornado", city="Oklahoma City", state="OK",desc= "This dojo is known for its Ultimate Technique: The Tornado Flash Kick")

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Winnie the Poor</title>
+    <script>
+        characters = [
+        heffalumps = {character:"Heffalumps",greet: function(){
+                    console.log("HEHE hAHAHA...give me your honey and your SOUL!!!HAHAHAAHa");}},
+        eeyore = {character:"Eeyore",greet: function(){
+                    console.log("Ohhh, well ");}},
+        kanga = {character:"Kanga",greet: function(){
+                            console.log("Have you seen Roo?");}},
+        owl = {character:"Owl",greet: function(){
+                            console.log(" I say Whoooo? WHooo is there at my door?");}},
+        christopherrobin = {character:"Christopher Robin",greet: function(){
+                            console.log("Silly old Bear");}},
+        rabbit = {character:"Rabbit",greet: function(){
+                            console.log("I don't care if you don't think it's not harvest season!!");}},
+        gopher = {character:"Gopher",greet: function(){
+                            console.log("I'm not in the book you know!");}},
+        piglet = {character:"Piglet",greet: function(){
+                            console.log("Oh d-d-d-dear! I wasn't expecting company!");}},
+        winniethepooh = {character:"Winnie The Pooh",greet: function(){
+                            console.log("Oh bother");}},
+        tigger = {character:"Tigger",greet: function(){
+                    console.log("That's what Tiggers do best!");}},
+            ]
+        bees = {character:"Bees",greet: function(){
+            console.log("BZZZ!! BUZZZ!! *STING* BZZZ!!");}}
+heffalumps.west = eeyore
+eeyore.east = heffalumps
+eeyore.south = kanga
+kanga.north = eeyore
+kanga.south = christopherrobin
+christopherrobin.north = kanga
+christopherrobin.west = owl
+christopherrobin.east = rabbit
+christopherrobin.south = winniethepooh
+owl.east = christopherrobin
+owl.south = piglet
+piglet.north = owl
+piglet.east = winniethepooh
+winniethepooh.north = christopherrobin
+winniethepooh.west = piglet
+winniethepooh.east = bees
+winniethepooh.south = tigger
+tigger.north = winniethepooh
+bees.west = winniethepooh
+bees.north = rabbit
+rabbit.west = christopherrobin
+rabbit.south = bees
+rabbit.east = gopher
+gopher.west = rabbit
+
+var player = {
+    honey: false,
+    location: tigger,
+    win:false
+}
+var target = mission(characters)
+
+function mission(characters){
+    var target = characters[Math.floor(Math.random()*characters.length)];
+    console.log("Your mission, should you choose to accept it, is to steal the honey from the Bees and deliver the it to "+target.character+". \n This message will self-destruct in 5 seconds.....*poof*")
+    return target
+}
+
+function pickUp(){
+    if(player.location==bees){
+        player.honey = true
+        console.log("We got stung, but it was worth it!!")
+    }else{
+        console.log("There's no honey here....")
+    }
+    return
+}
+
+function drop(){
+    if(player.honey==false&&player.win==false){
+        console.log("You don't have any honey to drop")
+    }
+    if(player.location==target&&player.honey==true){
+        console.log("Congratulations!! You won! You delivered the honey to "+target.character+"!")
+        player.honey = false
+        player.win =true
+    }
+    if(player.location!==target.character&&player.honey==true){
+        console.log("This isn't the right spot! *sigh*\n Now we have to go back and get more honey...and get stung *shudder*")
+        player.honey = false
+    }
+    return
+}
+
+function move(direction){
+    if(direction=="north"&&player.location.north!==undefined){
+        player.location = player.location.north
+        console.log("You are now at "+player.location.character+"'s house.")
+        player.location.greet()
+        return player.location
+    }  
+    if(direction=="south"&&player.location.south!==undefined){
+        player.location = player.location.south
+        console.log("You are now at "+player.location.character+"'s house.")
+        player.location.greet()
+        return player.location
+    } 
+    if(direction=="east"&&player.location.east!==undefined){
+        player.location = player.location.east
+        console.log("You are now at "+player.location.character+"'s house.")
+        player.location.greet()
+        return player.location
+    }
+    if(direction=="west"&&player.location.west!==undefined){
+        player.location = player.location.west
+        console.log("You are now at "+player.location.character+"'s house.")
+        player.location.greet()
+        return player.location
+    }else{
+        console.log("You may not move in that direction...There are woozles that way!!")
+    }  
+}
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

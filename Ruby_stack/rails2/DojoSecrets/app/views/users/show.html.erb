@@ -1,0 +1,28 @@
+
+<a href="/users/<%= @user.id %>/edit">Edit Profile</a>
+<a href="/users/<%= @user.id %>" data-method="delete">Delete Account</a>
+<a href="/secrets">Home</a>
+
+<form action="/secrets/new" method="post">
+<input type="hidden" name="authenticity_token" value = "<%=form_authenticity_token%>">
+<p>New Secret:</p>
+<input type="text" name="secret[content]"/>
+<br>
+<input type="submit" value="Create Secret"/>
+</form>
+<h2>Secrets</h2>
+<% if @user.secrets %>
+  <% @user.secrets.each do |e| %>
+    <%= e.content %>
+    <p><%= e.likes.length %> likes <a href="/secrets/<%= e.id %>" data-method="delete">Delete</a></p>
+    
+  <% end %>
+<% end %>
+
+<h2>Secrets Liked</h2>
+<% if @user.secrets_liked %>
+  <% @user.secrets_liked.each do |t| %>
+    <%= t.content %>
+    <p><%= t.likes.length %> likes</p>
+  <% end %>
+<% end %>

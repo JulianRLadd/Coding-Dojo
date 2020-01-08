@@ -1,0 +1,50 @@
+2 weeks for web fundamentals
+exam on first week, if passed, javascript
+(you repeat any exam twice)
+
+4 weeks for Python
+if passed after 3 weeks, project week is the 4th
+
+4 weeks for MEAN
+if not passed, you can still move on
+4 weeks for Ruby
+
+DNS means Domain Name Server
+URL means Uniform Resource Locator
+
+HTML
+heading tags make the font bold and changes its size.
+paragraph tags just slap it up there.
+
+
+elements on the same indentation level are siblings, 
+the relationship between a further indented element is parent/child
+
+tag ul is unordered list
+tag ol is ordered list with bullet points
+tag li is a child of either above tags
+
+for Table, tr is for table row, and th is for the head of that row
+	td is for the data in each space
+CSS
+use id tags for only one element
+use class for mutiple elements
+
+# is for IDs
+. is for Classes
+
+headings are display:block, meaning they have their own line
+inline means the element will allow other elements on their line
+inline-block means block items can be put in the same line, but 
+	their dimensions(width, height) must be specified. (Use px)
+
+margin is empty space
+padding is part of the element, but wouldn't have strings inside of it.
+
+when styling, use px for static webpages, but % for responsive webpages
+
+JAVASCRIPT
+
+=== means exact comparison, including data types
+
+== means close enough, but doesn't check data types

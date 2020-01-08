@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia(Jeopardy)</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript" src='trivia.js'></script>
+    <script>
+            $(document).ready(function(){
+                
+                $('#show').click(function(){
+                    $('.jumbotron').slideToggle();
+                })
+                $('#toggle').click(function(){
+                    $('#forward').slideDown();
+                    $('#back').show();
+                    $('#home').fadeIn();
+                })
+                $('#shifter').click(function(){
+                    $('#red_text').addClass('bg-danger');
+                    $('#red_text').append('Now I am red!!');
+                    $('#shifter').after("You have embarassed me!");
+                    $('#haunter').show();
+                })
+                $('#intro').click(function(){
+                    $('#bad_intro').before('\(My name is Julian\)');
+                })
+                $('.image_shift').click(function(){
+                })
+                $('.invoke').click(function(){
+                    $("input").keyup(function() {
+                    var value = $(this).val();
+                    alert(value);
+                    })
+                    .keyup();
+                })
+                $('.ghost').click(function(){
+                    $('.phantom').toggle();
+                    $('.appear').text('Oops! Wrong words. Say them again to bring my spell back!');
+                })
+            });
+            </script>
+</head>
+<body class = "bg-secondary board">    
+    <div class="container bg-light">
+        <button onclick="triviaData()">Get new questions</button>
+    </div>
+    <div class="question">
+    </div>
+
+<p></p>
+</body>
+</html>

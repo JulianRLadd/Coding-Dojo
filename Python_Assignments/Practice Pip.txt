@@ -1,0 +1,22 @@
+pip list - gives a list of all the packages that are currently installed on your system or virtual environment
+
+deactive - this exits out of your virtual environment
+
+pip3 list - same as pip list, except it will not show (similar to pip list) any installed packages that were 
+	installed during an activated virtual environment
+
+call py3Env/Scripts/activate - this activates an already created environment titled "py3Env"
+
+pip install Django==1.11.9 - this calls on pip to install a specific version of the application titled "Django"
+
+pip freeze - while list gives a list of the currently installed packages, the freeze command excerpts the list into
+	a text file which we can use to create a virtual envionment with the exact same packages
+
+pip uninstall Django - this tells pip to uninstall the application title "Django"
+
+pip show Django - this show all the details of the application titled "Django", including the version, a summary of 
+	what it is used for, any license information, author information, and the home page of where its downloaded 
+	from
+
+pip search Flask - this list out all the packages that hold the string (in this case Flask) that can be installed
+	using pip

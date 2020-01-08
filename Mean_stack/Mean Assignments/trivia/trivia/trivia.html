@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="trivia.js"></script>
+    <link rel="stylesheet" href="trivia.css">
+    <title>Trivia</title>
+    <!-- <script>
+        $('document').ready(function(){
+            $('button').click(function(){
+                $.get("https://opentdb.com/api.php?amount=10&category=27&type=multiple", function(data){
+                    var displayQuestion = data.question;
+                    var displayQuestion = data.correct_answer;
+                    console.log(data);
+                })
+            })
+            $('button').click(function(){
+                $.get("https://opentdb.com/api.php?amount=10&category=27&type=multiple", function(data){
+                    var displayQuestion = data.question;
+                    console.log(data);
+                })
+            })
+        })
+    </script> -->
+</head>
+<body>
+    <h2>Animal Trivia</h2><br>
+    <div>
+        <div id="q1" class="box">
+            <h3>Question 1</h3>
+        </div>
+        <div id="q2" class="box">
+            <h3>Question 2</h3>
+        </div>
+        <div id="q3" class="box">
+            <h3>Question 3</h3>
+        </div>
+        <div id="q4" class="box">
+            <h3>Question 4</h3>
+        </div>
+    </div>
+    <button>Generate New Question</button>
+</body>
+</html>

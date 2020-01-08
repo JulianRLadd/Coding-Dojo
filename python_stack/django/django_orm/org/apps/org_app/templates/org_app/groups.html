@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'org_app/css/style.css' %}"> 
+</head>
+<body>  
+    <div class="header">
+        <h1>Hi {{user.first_name}} {{user.last_name}}!</h1>
+        <a href="/logout/">Log Out</a>
+    </div>
+    <h2>Here are the organizations you may join:</h2>
+    <div class="group_list">
+        
+        {%for group in all_groups%}
+            <a href="{{group.id}}"> <h2> {{group.title}}</h2></a>
+            <p>Members: {{group.users_who_joined.count}}</p>
+            <p>{{group.desc}}</p>
+            {%if group in owned_groups%}
+            <a href="/groups/{{group.id}}/delete" class="delete_tags ">Delete Group</a>
+            <br>
+            {%endif%}
+        {%endfor%}
+    </div>
+    <div class="addSection">
+        <h2>Create a new organization</h2>
+        {%if messages%}
+            <ul class="messages">
+            {%for message in messages%}
+                <li {%if message.tags%} class="{{message.tags}}"{%endif%}>{{message}}</li>
+            {%endfor%}
+            </ul>
+        {%endif%}
+        <form action="addGroup/" method="post">
+            {% csrf_token %}
+            <p>Org Name:   <input type="text" name="name"/></p>
+            <p>Description:<input class="describe" name="description"></p>
+            <br>
+            <input class="button" type="submit" value="Create"/>
+        </form>
+    </div>
+</body>
+</html>

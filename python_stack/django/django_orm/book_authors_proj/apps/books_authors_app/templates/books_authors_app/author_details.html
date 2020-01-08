@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Author Details (...I told you to make it stop *sniff*)</title>
+</head>
+<body>
+    <div>
+
+        <h1>{{author.first_name}} {{author.last_name}} </h1>
+        <h3>ID: {{author.id}}</h3>
+        <h3>Description: </h3>
+        <p>{{author.notes}}</p>
+    </div>
+    <div>
+        <h3>Books:</h3>
+        <ul>
+            {%for books in authors_books%}
+            <li>{{books.title}}</li>
+            {%endfor%}
+        </ul>
+        <form action="../addBookToAuthor/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name='id' value='{{author.id}}'>
+            <select name="book" >
+                {%for book in available_books%} 
+                <option value="{{book.id}}">{{book.title}}</option>
+                {%endfor%}
+            </select>
+            <input type="submit" value="Add Book"/>
+        </form>
+    </div>
+</body>
+</html>

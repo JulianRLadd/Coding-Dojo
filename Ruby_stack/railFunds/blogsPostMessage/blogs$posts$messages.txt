@@ -1,0 +1,11 @@
+Blog.first.post.all
+
+Blog.last.post.all.order("title DESC")
+
+Post.first.update(title:"Revenge Of the Water Monsters")
+
+Post.third.destroy
+
+Blog.all
+
+Blog.where("id < ?", 5)

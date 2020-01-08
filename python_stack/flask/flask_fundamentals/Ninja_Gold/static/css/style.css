@@ -1,0 +1,74 @@
+*{
+    padding: 0px;
+    margin:0px;
+    outline:0px;
+    border:0px;
+}
+
+body{
+    background-image: url(../img/ninja.jpg);
+}
+
+h2{
+    margin-top: 250px;
+}
+
+#house{
+    background-image: url(../img/house.png);
+}
+#cave{
+    background-image: url(../img/cave.png);
+}
+#farm{
+    background-image: url(../img/farm.png);
+}
+#casino{
+    background-image: url(../img/casino.png);
+}
+
+.box{
+    width:250px;
+    height: 350px;
+    display: inline-block;
+    margin: 30px;
+    border: solid black 2px;
+    background-color: rgba(220,154,80, 0.7);
+    background-image: url(../img/gold.png);
+    background-repeat: no-repeat;
+    text-align:center ;
+}
+h3{
+    color: lightgoldenrodyellow;
+}
+
+.activity_log{
+    text-align: center;
+}
+
+#history{
+    background-color: rgba(220,154,80, 0.7);
+    margin-left: 400px;
+    border: solid black 2px;
+    width:400px;
+    height: 100px;
+    text-align: center;
+    overflow: auto;
+}
+
+button{
+    border: solid black 1px;
+    padding: 12px;
+    margin-left: 630px;
+    font-style: oblique;
+}
+input{
+    margin-top: 10px;
+    padding:4px
+}
+p{
+    color: green;
+}
+
+.red{
+    color: red;
+}

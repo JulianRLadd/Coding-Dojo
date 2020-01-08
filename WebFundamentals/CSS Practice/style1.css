@@ -1,0 +1,15 @@
+
+div {
+    height: 200px;
+    border:200px;
+    border:solid red;
+    background:blue;
+}
+body{
+    background-color: azure;
+}
+img{
+    border: 15px solid purple;
+    padding:120px;
+}
+

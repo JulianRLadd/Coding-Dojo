@@ -1,0 +1,28 @@
+
+<h1>Listing <%=@users.length%> users</h1>
+
+<% if flash[:success]%>
+
+
+<table class= "border border-dark">
+  <thead>
+    <tr class="border border-dark">
+      <td>First Name</td>
+      <td class = "border border-dark">Last Name</td>
+      <td>City</td>
+      <td class = "border border-dark">Email</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+      <td><a href="/users/<%= user.id %>">Show</a>  |  <a href="/users/<%= user.id %>/edit">Edit</a>  |   <a href="/users/<%= user.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>  
+  </tbody>
+</table>
+<a href="./users/new">New User</a>

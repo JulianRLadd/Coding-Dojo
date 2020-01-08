@@ -1,0 +1,55 @@
+*{
+    padding: 0px;
+    margin:0px;
+    outline:0px;
+    border:0px;
+}
+
+.header h1{
+    display: inline-block;
+    padding-right: 990px;
+}
+
+.header {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+input,textarea{
+    border: solid black 1px;
+}
+
+.button{
+    margin-left: 200px;
+    padding: 5px;
+}
+
+body{
+    padding: 40px;
+    background-image: url(../img/group.jpg);
+}
+
+.describe{
+    margin-top: 10px;
+    height: 60px;
+}
+.group_list{
+    display: inline-block;
+    padding-top: 40px;
+}
+
+.group_list p{
+    padding-left: 20px;
+}
+
+.delete_tags{
+    padding-left: 20px;
+}
+
+.addSection{
+    border: solid black 2px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 600px;
+}

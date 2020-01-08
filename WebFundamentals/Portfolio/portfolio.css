@@ -1,0 +1,144 @@
+*{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+#wrapper{
+	width: 970px;
+	height: 1200px;
+}
+#purple{
+	background-color: #6f5964;
+	width: 930px;
+	height: 1020px;
+	padding: 20px;
+}
+#photo_girl{
+	height: 270px;
+	border: 5px solid #878593;
+	vertical-align: top;
+}
+#about{
+	background-color: #878593;
+	width: 470px;
+	height: 270px;
+	vertical-align: top;
+	margin-left: 30px;
+}
+#about div {
+	width: 100%;
+	height: 250px;
+}
+.long{
+	width: 300px;
+	height: 650px;
+	background-color: #878593;
+	margin-top: 25px;
+	vertical-align: top;
+}
+.long div {
+	width: 100%;
+	height: 350px;
+}
+.push_right{
+	margin-right: 10px;
+}
+#wrapper, .long div, #about div{
+	background-color: #e8d4e9;
+}
+.long, #photo_girl, #about{
+	display: inline-block;
+}
+.header div{
+	display: inline-block;
+}
+#top{
+	padding-left: 490px;
+}
+#about div p, .long ul{
+	padding: 10px;
+}
+#about div p a{
+	color:black;
+}
+.mini-image{
+	width :100%;
+}
+h2{
+	color:white;
+	background-image: linear-gradient(lightgrey,grey,lightgrey);
+}
+.long p{
+	padding: 5px 10px 0px 10px;
+}
+h1, h3{
+	display:inline-block;
+	padding: 7px;
+}
+#about div a{
+	color:black;
+	margin-left:10px;
+}
+.long div ul li{
+	display:inline-block;
+	list-style-type: none;
+	padding-left:6px;
+	padding-top: 7px;
+}
+.long div ul li img{
+	width:60px;
+	height:60px;
+	display:inline-block;
+}
+h1{
+	padding-right: 495px;
+	padding-left: 20px;
+}
+#lower, #low, #lowest{
+	height:300px;
+}
+.button {
+	background-color: #407d61;
+	border: 1px solid black;
+	color: white;
+	padding: 10px;
+	border-radius: 12px;
+	display: block;
+	font-size: 22px;
+	margin-left: 50px;
+	margin-top: 30px;
+}
+#shimmy{
+	margin-left: 80px;
+	margin-top: 70px;
+	display:inline-block;
+}
+#raise{
+	margin-top: 0px;
+	margin-left: 80px;
+}
+#buttons{
+	margin-top: 70px;
+}
+.ender{
+	padding-top: 12px;
+	text-align: center;
+	color:black;
+}
+.bottom img{
+	width:16px;
+	height: 16px;
+	display:inline-block;
+}
+.bottom li{
+	text-decoration: underline;
+	font-style: italic;
+	display:inline-block;
+}
+
+.bottom{
+	display: inline-block;
+	padding-top: 10px;
+	padding-left: 340px;
+}

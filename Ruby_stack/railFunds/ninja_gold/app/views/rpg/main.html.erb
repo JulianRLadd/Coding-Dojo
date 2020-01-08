@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<h3>Your Gold: <%=session[:gold]%></h3>
+<div class = "row bg-warning p-5">
+    <div class = "d-inline-block col" >
+        <h2>Farm</h2>
+        <h4>Earns 10-20 Golds! </h4>
+        <form action="/farm" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div class = "d-inline-block col" >
+        <h2>Cave</h2>
+        <h4>Earns 5-10 Golds! </h4>
+        <form action="/cave" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div class = "d-inline-block col" >
+        <h2>House</h2>
+        <h4>Earns 2-5 Golds! </h4>
+        <form action="/house" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div class = "d-inline-block col" >
+        <h2>Casino</h2>
+        <h4>Earn or Lose up to 50 Golds! </h4>
+        <form action="/casino" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+</div>
+<div class= "bg-light">
+<h3>Activities:</h3>
+        <div class="bg-dark jumbotron" cols="30" rows="10">
+        <% session[:activity].each do |action| %>
+            <%if action > 1 %>
+                <p class ="text-success">
+                You earned <%=action %> Golds!! <%=@time_log %> 
+                </p>
+            <%else%>
+                <p class= "text-danger">
+                You lost <%=action %> Golds...that sucks!<%=@time_log %>  
+                </p>
+            <%end%>
+        <%end%>
+        </div>
+</div>

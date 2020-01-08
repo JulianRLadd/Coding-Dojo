@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+buttons{
+    outline: solid black;
+}
+
+p{
+    color: silver;
+    text-align: center;
+}
+li{
+    color: red;
+    text-align: center;
+}
+div{
+    background-color: chocolate;
+    display:inline-block;
+    width: 200px;
+    height: 400px;
+}
+
+#brown{
+    background-color: brown;
+    /*margin-left: 400px;*/
+    padding: 400px;
+}
+
+h1{
+    background-color: blueviolet;
+}
+
+#gold{
+    color:gold;
+}
+
+ul{
+    list-style: none;
+}
+.blue{
+    color:blue;
+}
+
+span{
+    color: darkcyan;
+}
+
+h3 span{
+    color: darkgoldenrod
+}

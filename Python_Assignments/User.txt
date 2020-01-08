@@ -1,0 +1,45 @@
+class User():
+    def __init__(self,account_balance,name):
+        self.account_balance = 0
+        self.name = name
+
+    def make_withdrawal(self,amount):
+        self.account_balance-=amount
+
+    def make_deposit(self,amount):
+        self.account_balance+=amount
+
+    def display_user_balance(self):
+        print("User :",self.name,", Balance: ",self.account_balance)
+
+    def transfer_money(self,other_user,amount):
+        self.account_balance-=amount
+        other_user.account_balance+=amount
+
+
+bob = User(200,"Bob")
+
+bob.make_deposit(3000)
+bob.make_deposit(440)
+bob.make_deposit(200)
+bob.make_withdrawal(1200)
+bob.display_user_balance()
+
+carl = User(500,"Carl")
+carl.make_deposit(450)
+carl.make_deposit(3200)
+carl.make_withdrawal(700)
+carl.make_withdrawal(100)
+carl.display_user_balance()
+
+tyrone = User(54790, "Tyrone")
+tyrone.make_deposit(1500)
+tyrone.make_withdrawal(700)
+tyrone.make_withdrawal(900)
+tyrone.make_withdrawal(1900)
+
+tyrone.display_user_balance()
+
+bob.transfer_money(tyrone,600)
+bob.display_user_balance()
+tyrone.display_user_balance()

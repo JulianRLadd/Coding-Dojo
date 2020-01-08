@@ -1,0 +1,19 @@
+<h1>All Heroes</h1>
+<% @heroes.each do |hero| %>
+	<%= hero.name %>
+<% end %>
+<a href="/">Go Home</a>
+
+<% if flash[:alert] %>
+	<% flash[:alert].each do |error| %>
+		<p><%= error %></p>
+	<% end %>
+<% end %>
+
+<form action="/heroes" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    Name: <input type="text" name="hero[name]">
+    Superpower: <input type="text" name="hero[superpower]">
+    # of People Saved: <input type="text" name="hero[numPeopleSaved]">
+    <input type='submit' value='Create'>
+</form>

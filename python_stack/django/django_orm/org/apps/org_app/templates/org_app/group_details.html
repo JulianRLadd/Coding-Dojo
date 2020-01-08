@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Group's Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'org_app/css/style2.css' %}"> 
+</head>
+<body>
+    <div class="header">
+        <a class= "dash" href="/groups/">Dashboard</a>
+        <a href="/logout/">Log Out</a>
+    </div>
+    <div class="seconder">
+        <h1 class="inline">{{group.title}}</h1>
+        {%if group not in joined_groups%}
+            <p class="inline"><a class="link" href="/groups/{{group.id}}/join">Join Group</a></p>
+        {%else%}
+            <p class="inline"><a class="link" href="/groups/{{group.id}}/leave">Leave</a></p>
+        {%endif%}
+        <p class="members">{{group.desc}}</p>
+    </div>
+    <div class="details">
+        <h3>Created by: {{group.created_by.first_name}} {{group.created_by.last_name}}</h3>
+        <h3>Members:</h3>
+        <ul>
+            {%for user in joined_by%}
+                <p class="members">{{user.first_name}} {{user.last_name}}</p>
+            {%endfor%}
+        </ul>
+    </div>
+</body>
+</html>

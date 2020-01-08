@@ -1,0 +1,15 @@
+import random
+def randInt(min = 0,max = 100):
+    if min>max or max<min:
+        temp = max
+        max = min
+        min = temp
+        print ("Did you accidnetally switch them? If so, I fixed it for you!")
+        print (f"Min is now: ",{min})
+        print (f"Max is now: ",{max})
+    num = random.random()*max+min
+    return num
+print(randInt())
+print(randInt(max=50))
+print(randInt(min=50))
+print(randInt(min=50, max=500))

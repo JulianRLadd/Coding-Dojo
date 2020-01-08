@@ -1,0 +1,40 @@
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <body class="text-center">
+            <div class="border border-dark d-block">
+                <h1>Dojo Message Board</h1>
+                <hr>
+                <% if(messages.registration) { %>
+                    <!-- <%- JSON.stringify(messages) %>  -->
+                        <% for (var x of messages.registration) { %>
+                            <script>alert('<%= x %>')</script>
+                        <% } %>
+                <% } %>
+                <form action="/messages" method="post">
+                    <p>Name: <input type="text" name="name"></p>
+                    <p>Message: <br><textarea name="content" cols="30" rows="10"></textarea></p>
+                    <button>Post Message</button> 
+                </form>
+                    <%for (message of messages) {%>
+                    <div class="border border-success d-block mb-2">
+                        <h6 class="text-danger">Name: <%=message.name%></h6>
+                        <h6 class="text-danger"> Message: <%=message.content %></h6>
+                        
+                        <%for (comment of message.comments) {%>
+                        <div class="d-inline-block border border-info">
+                        <p class="text-primary">Name: <%=comment.name %></p>
+                        <p class="text-primary">Comment: <%=comment.content %></p></div>
+                        <% }%>
+                    </div>
+                    <div>
+                        <form action="/comments/<%= message._id %>" method="post">
+                            <h4>Comments</h4>
+                            <p>Name: <input type="text" name="name"></p>
+                            <p>Comment: <input type="text" name="content"></p>
+                            <button>Post Comment</button> 
+                        </form>
+                    </div>
+                    <% }%>
+            </div>
+        </body>
+    </html>
