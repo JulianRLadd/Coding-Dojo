@@ -1,0 +1,19 @@
+
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body class="text-center">
+        <div class="border border-dark d-inline-block">
+            <h1>Welcome to Serpents Sanctuary</h1>
+            <h2>Current Serpents:</h2>
+                <%for (snakes of serpent) {%>
+                    <div class="border border-success d-block mb-2">
+                            <p class="font-weight-bold"><%=snakes.name%></p>
+                            <p class="text-danger"><%=snakes.length %> ft.</p>
+                            <p class="text-primary"><%=snakes.type %></p>
+                            <button><a href="./serpents/<%=snakes._id%>">Info</a></button>
+                    </div>
+                <% }%>
+                <button><a href="./serpents/new">Add a Serpent!</a></button>
+        </div>
+    </body>
+</html>

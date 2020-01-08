@@ -1,0 +1,19 @@
+
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body class="text-center">
+        <div class="border border-dark d-inline-block">
+            <h1>Serpents Sanctuary</h1>
+                <div class="border border-success d-block mb-2">
+                        <%if(serpent) {%> 
+                            <h2>Information on <%=serpent.name%>:</h2>
+                            <p class="text-info">Length: <%=serpent.length %> ft.</p>
+                            <p class="text-info">Type: <%=serpent.type %></p>
+                            <button><a href="./edit/<%=serpent._id%>">Edit this Serpent</a></button>
+                            <form action="./destroy/<%=serpent._id%>" method="post"><button class="text-danger">Delete this Serpent</button></form>
+                            <% }%>
+                    </div>
+                    <button><a href="../">Home</a></button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body class="text-center">
+        <div class="border border-dark d-inline-block p-5 rounded-sm">
+            <h2>Welcome to Serpents Sanctuary</h2>
+            <% if(messages.registration) { %>
+                <!-- <%- JSON.stringify(messages) %>  -->
+                    <% for (var x of messages.registration) { %>
+                        <script>alert('<%= x %>')</script>
+                    <% } %>
+            <% } %>
+            <form action="/serpents" method="post">
+                <p>Name: <input type="text" name="name"></p>
+                <p>Length: <input type="text" name="length"></p>
+                <p>Type: <input type="text" name="type"></p>
+                <button>Add Serpent</button> 
+            </form>
+            <button><a href="../">Home</a></button>
+        </div>
+    </body>
+</html>
