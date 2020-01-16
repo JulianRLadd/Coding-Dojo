@@ -11,16 +11,12 @@ app.use(session({
 }))
 app.use(flash());
 
-const QuoteSchema = new mongoose.Schema({
-    name: {type: String, required: true, minlength: 3},
-    quote: {type: String, requited: true, minlength: 6}
-},{timestamps: true});
-   // create an object that contains methods for mongoose to interface with MongoDB
-const Quote = mongoose.model('Quote', QuoteSchema);
+const Quote = require('./server/models/quote.js')(mongoose)
+
 app.use(express.static(__dirname + "/static"));
 app.use(express.urlencoded({extended:true}));
 
-mongoose.connect('mongodb://localhost/quotingdojo', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/quotingdojo', {useNewUrlParser: true});
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 

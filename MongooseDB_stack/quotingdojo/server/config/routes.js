@@ -1,5 +1,3 @@
-const mongoose = require('mongoose');
-const Quote = mongoose.model('Quote');
 var quotes  = require ('../controllers/quotes.js')
 
 module.exports = function (app){
@@ -12,7 +10,7 @@ module.exports = function (app){
         quotes.create(req,res);
     });
     
-    app.get('/quotes', (req, res) => {  
+    app.get('/quotes', (req, res) => {  
         quotes.find(req,res);
     });
         
