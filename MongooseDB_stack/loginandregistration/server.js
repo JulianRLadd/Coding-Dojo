@@ -37,7 +37,7 @@ app.get('/',(req,res) => {
 })
 
 app.post('/registration',(req,res) => {
-    if(req.body.password!== req.body.confrimpw){
+    if(req.body.password!== req.body.confirmpw){
         
     }
     var user = new userSchema(req.body);
