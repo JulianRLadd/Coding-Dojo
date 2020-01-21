@@ -1,6 +1,7 @@
 // All necessary requires, such as the Quote model.
-const mongoose = require('mongoose');
-const Quote = mongoose.model('Quote');
+const mongoose  = require ('../config/mongoose.js')
+const Quote = require('../models/quote.js')
+
 module.exports  = {
     index: function(req, res) {
     	res.render("index");

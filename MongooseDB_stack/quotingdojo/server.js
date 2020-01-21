@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
+const mongoose  = require ('./server/config/mongoose.js')
+
 const flash = require('express-flash');
 const session  = require('express-session');
 app.use(session({
@@ -16,7 +17,7 @@ const Quote = require('./server/models/quote.js')(mongoose)
 app.use(express.static(__dirname + "/static"));
 app.use(express.urlencoded({extended:true}));
 
-mongoose.connect('mongodb://localhost/quotingdojo', {useNewUrlParser: true});
+
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
