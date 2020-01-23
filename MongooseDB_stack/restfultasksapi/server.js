@@ -4,7 +4,7 @@ mongoose.connect('mongodb://localhost/restfultasksapi_db', {useNewUrlParser: tr
 const app = express();
 app.use(express.json());
 
-
+app.use(express.static( __dirname + '/public/dist/public' ));
 const taskSchema = new mongoose.Schema({
     title: String,
     description: {type:String,  default:''},
@@ -15,6 +15,12 @@ const taskSchema = new mongoose.Schema({
 
 app.get('/tasks', (req, res) => {  
 	    Task.find()
+	        .then(data => res.json(data))
+	        .catch(err => res.json(err));
+    });
+    
+app.get('/tasks/:id', (req, res) => {  
+	    Task.findOne({_id:req.params.id})
 	        .then(data => res.json(data))
 	        .catch(err => res.json(err));
 	});
