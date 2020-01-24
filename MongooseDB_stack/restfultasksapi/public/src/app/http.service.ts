@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 
 export class HttpService {
   constructor(private _http: HttpClient){
-      this.getTask("5e29e5cd0354fc4d74520087");
   }
 
 getTasks(){
@@ -23,4 +22,11 @@ getTask(taskID){
   // subscribe to the Observable and provide the code we would like to do with our data from the response
   tempObservable.subscribe(data => console.log("Got our task!", data));
 }
+postToServer(num){
+      // use the .post() method of HttpClient
+      // num must be an object
+      // provide the url of your post route - make sure this is set up in your server!
+      return this._http.post('/tasks', num);  
+  }
+
 }

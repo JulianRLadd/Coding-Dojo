@@ -15,10 +15,24 @@ export class AppComponent implements OnInit {
     constructor(private _httpService: HttpService){}
     // ngOnInit will run when the component is initialized, after the constructor method.
     ngOnInit(){
-      this.snacks = ["vanilla","chocolate","cranberry"];
       this.tasks = [];
-      this.getTasksFromService();
     }
+    onClickShow(task:any): void{
+      console.log(`Showing details of selected task...`,task)
+      task.completed = true;
+    }
+    onButtonClick(): void { 
+      console.log(`Getting all tasks...`);
+      this.getTasksFromService();
+  }
+    
+    onButtonClickParam(num: Number): void { 
+      console.log(`Click event is working with num param: ${num}`);
+      // call the service's method to post the data, but make sure the data is bundled up in an object!
+      let observable = this._httpService.postToServer({data: num});
+      observable.subscribe(data => console.log("Got our data!", data));
+  }
+
     getTasksFromService(){
       let observable = this._httpService.getTasks();
       observable.subscribe(data => {
