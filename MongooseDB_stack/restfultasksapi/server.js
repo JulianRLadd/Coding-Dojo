@@ -15,7 +15,7 @@ const taskSchema = new mongoose.Schema({
 
 app.get('/tasks', (req, res) => {  
 	    Task.find()
-	        .then(data => res.json(data))
+	        .then(data => res.json({tasks: data}))
 	        .catch(err => res.json(err));
     });
     
