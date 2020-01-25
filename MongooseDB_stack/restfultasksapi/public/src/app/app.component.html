@@ -8,19 +8,25 @@
 <div class="main">
   <h1>Restful Tasks API</h1>
 <br>
+<form (submit)="onSubmit()">
+      <!-- use the json pipe to see how newTask changes in real time -->
+      <p> {{ newTask | json }} </p>
+      <p>Title:<input type="text" name="title" [(ngModel)]="newTask.title" /></p>
+      <p>Description:<input type="text" name="description" [(ngModel)]="newTask.description" /></p>
+      <input type="submit" value="Create Task" />
+  </form>
+  <div *ngIf="appear">
+    <h2>Edit Tasks:</h2>
+    <form (submit)="reSubmit(edit)">
+          <p>Title:<input type="text" name="title" [(ngModel)]="edit.title" /></p>
+          <p>Description:<input type="text" name="description" [(ngModel)]="edit.description" /></p>
+          <input type="submit" value="Save Task"/>
+      </form>
+  </div>
 <br>
-<button (click)="onButtonClick()">Get All Tasks!</button>
-
-<div *ngIf="tasks.length>0">
-  <ul>
-    <li *ngFor="let task of tasks">{{task.title}}
-      <button (click)="onClickShow(task)">Show</button>
-    </li>
-    </ul>
-  </div>
   <div *ngFor="let task of tasks">
-    <p *ngIf="task.completed"> {{task.title}} <br>{{task.description}}</p>
-  </div>
+    <h3> {{task.title}} <br>{{task.description}}</h3>
+    <button (click)="onClickEdit(task)">Edit</button>
+    <button (click)="onClickDelete(task._id)">Delete</button>
 </div>
-
 <router-outlet></router-outlet>

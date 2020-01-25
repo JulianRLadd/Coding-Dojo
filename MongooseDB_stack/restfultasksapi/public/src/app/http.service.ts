@@ -29,4 +29,14 @@ postToServer(num){
       return this._http.post('/tasks', num);  
   }
 
+  addTask(newtask){
+    return this._http.post('/tasks', newtask)
+}
+  updateTask(task){
+    return this._http.put('/tasks/'+task._id, task)
+}
+  deleteTask(id){
+    return this._http.delete('/tasks/'+ id)
+}
+
 }

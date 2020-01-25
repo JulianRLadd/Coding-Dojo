@@ -1,3 +1,6 @@
+console.log("**********SERVER***********")
+
+
 const express = require("express");
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/restfultasksapi_db', {useNewUrlParser: true});
