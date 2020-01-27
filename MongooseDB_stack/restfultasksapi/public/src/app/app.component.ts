@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   id: any;
   appear:boolean;
   edit:any;
+  selectedTask:any;
     constructor(private _httpService: HttpService){}
     // ngOnInit will run when the component is initialized, after the constructor method.
     ngOnInit(){
@@ -27,6 +28,14 @@ export class AppComponent implements OnInit {
       this.newTask = { title: "", description: "" }
       this.getTasksFromService();
     }
+    taskToShow(task:any):void{
+      let observable = this._httpService.getTask(task);
+      observable.subscribe(data =>{
+        console.log("Task is selected!",data)
+        this.selectedTask = data;
+      })
+    }
+
     onClickEdit(task:any): void{
       this.appear = true;
       console.log(`Editing details of selected task...`,task.id)

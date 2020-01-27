@@ -16,11 +16,12 @@ getTasks(){
   //tempObservable.subscribe(data => console.log("Got our tasks!", data));
   return this._http.get('/tasks');
 }
-getTask(taskID){
+getTask(task){
   // our http response is an Observable, store it in a variable
-  let tempObservable = this._http.get('/tasks/'+taskID);
+  let tempObservable = this._http.get('/tasks/'+task._id);
   // subscribe to the Observable and provide the code we would like to do with our data from the response
   tempObservable.subscribe(data => console.log("Got our task!", data));
+  return this._http.get('/tasks/'+task._id)
 }
 postToServer(num){
       // use the .post() method of HttpClient
