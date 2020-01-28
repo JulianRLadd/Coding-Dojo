@@ -1,0 +1,48 @@
+<style>  
+  .main,.h3,.form{
+    display: inline-block;
+    
+  }
+  .side{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .alone{
+    display: inline;
+    vertical-align: middle;
+  }
+</style>
+<div class="main"> 
+  <h1>Rate my Cakes</h1>
+<br>
+<form (submit)="onSubmit()">
+      <!-- use the json pipe to see how newTask changes in real time -->
+      <p> {{ newTask | json }} </p>
+      <h4>Submit a cake to be rated</h4>
+      <p>Baker Name:<input type="text" name="baker" [(ngModel)]="newCake.baker" /></p>
+      <p>Image URL:<input type="text" name="image" [(ngModel)]="newCake.image" /></p>
+      <input type="submit" value="Create Cake" />
+  </form>
+  <div class="main">
+  <app-cake *ngIf="selectedCake" [cakeToShow] = "selectedCake" [average] = "avgRate">
+  </app-cake></div>
+</div>
+  <br>
+  <div class="alone">
+  <div *ngFor="let cake of cakes" class="side">
+    <img src="{{cake.image}}"  alt="" (click)="cakeToShow(cake)"(click)="findAvg(cake)">
+    <br>
+    <form (submit)="rateCake(cake)">
+      <p>Rating:<select name="rating" [(ngModel)]="review.rating">
+        <option value="5">5 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="2">2 Stars</option>
+        <option value="1">1 Star</option>
+      </select></p>
+      <p>Comment:<input type="text" name="comments" [(ngModel)]="review.comments"/></p>
+      <input type="submit" value="Rate!"/>
+  </form>
+  </div>
+</div>
+<router-outlet></router-outlet>
