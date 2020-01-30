@@ -1,0 +1,24 @@
+.outline{
+    border: solid black 3px;
+    border-radius: 3px;
+}
+.red{
+    border: solid red 3px;
+    border-radius: 3px;
+}
+.blue{
+    border: solid blue 3px;
+    border-radius: 3px;
+}
+.silver{
+    border: solid silver 3px;
+    border-radius: 3px;
+}
+.green{
+    border: solid green 3px;
+    border-radius: 3px;
+}
+.pink{
+    border: solid pink 3px;
+    border-radius: 3px;
+}

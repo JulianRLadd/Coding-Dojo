@@ -1,0 +1,9 @@
+
+<button (click)="goHome()">Home
+</button>
+<p>Edit this author:</p>
+    <form (submit)="editAuthor(author)">
+      <p>Name:<input type="text" name="name" [(ngModel)]="author.name"/></p>
+      <button (click)="goHome()">Cancel</button>
+      <input type="submit" value="Submit"/>
+  </form>
