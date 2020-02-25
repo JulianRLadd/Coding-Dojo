@@ -30,18 +30,18 @@ export class NewComponent implements OnInit {
     // Code to send off the form data (this.newcake) to the Service
     let observable = this._httpService.addPet(this.newPet);
       observable.subscribe(data => {
-        if(data.errors){
-          console.log(data.message)
-          this.errors = data.message;
-        }
-        else{
+        // if(data.errors){
+        //   console.log(data.message)
+        //   this.errors = data.message;
+        // }
+        // else{
           console.log("Added pet!", data)
           // In this example, the array of cakes is assigned to the key 'cakes' in the data object. 
           // This may be different for you, depending on how you set up your cake API.
           // Reset this.newcake to a new, clean object.
           this.newPet = { name: "", type: "", description: "" }
           this.goHome();
-        }
+        //}
       });
   }
 }

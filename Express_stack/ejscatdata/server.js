@@ -6,7 +6,7 @@ app.use( express.static( "images" ) );
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
-app.get("/cats", (req, res) => {
+app.get("/", (req, res) => {
     res.render('cats');
 })
 

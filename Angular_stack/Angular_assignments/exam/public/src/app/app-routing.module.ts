@@ -7,11 +7,11 @@ import { EditComponent } from './edit/edit.component';
 
 
 const routes: Routes = [
-  {path:'pets', component: HomeComponent},
+  {path:'', component: HomeComponent},
   {path:'new', component: NewComponent},
   {path:'pets/:id', component: DetailsComponent},
   {path:'pets/:id/edit', component: EditComponent},
-  {path: '', pathMatch: 'full', redirectTo: '/' },
+  {path: '', pathMatch: 'full', redirectTo: '/pets' },
   { path: '**', component: HomeComponent }
 ];
 

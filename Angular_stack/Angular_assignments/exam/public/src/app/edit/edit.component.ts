@@ -48,14 +48,14 @@ errors:any;
     this.pet.skill3 = this.pet.skill3;
     let observable = this._httpService.updatePet(this.pet)
     observable.subscribe(data =>{
-      if(data.errors){
-        console.log(data.message)
-        this.errors = data.message;
-      }
-      else{
+      // if(data.errors){
+      //   console.log(data.message)
+      //   this.errors = data.message;
+      // }
+      //else{
       console.log("Edited pet!",data)
       this.goHome();
-      }
+      //}
     })
   }
 }

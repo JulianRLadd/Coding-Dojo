@@ -9,6 +9,7 @@ import { HttpService } from '../http.service';
 export class DetailsComponent implements OnInit {
 id:any;
 pet:any;
+clicked:any;
   constructor(
     private _httpService: HttpService,
     private _route: ActivatedRoute,
@@ -23,6 +24,7 @@ pet:any;
       console.log('******OnINIT*******',params.get('id'))
       this.id = params.get('id')
       this.getPet(this.id);
+      this.clicked = false;
     })
   }
   goHome() {
@@ -34,6 +36,7 @@ pet:any;
     console.log('**************LikePET******************');
     observable.subscribe(data=> {
       console.log("Liked pet!",data);
+      this.clicked = true;
     })
   }
   getPet(id) {

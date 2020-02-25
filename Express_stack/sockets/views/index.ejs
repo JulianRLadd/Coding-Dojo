@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Sockets</title>
+    <style>
+    #updateMsg{
+        border: solid green 2px;
+        background-color: lightgreen;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+            var socket = io(); //1
+            $('#updateMsg').fadeOut();
+            socket.on('greeting', function (data) { //4
+                console.log(data.msg); //5
+                socket.emit('thankyou', { msg: 'Thank you for connecting me! -Client' }); //6
+            });
+            socket.on('show_message', function (data, num) { //4
+            $('#updateMsg').fadeIn();
+            $('#updateMsg').append(
+                "<p>You emitted the following information to the server:{ name: "+data[0]+", location:"+data[1]+", language:"+data[2]+", comment:"+data[3]+"} </p>",
+                "<p>Your lucky number emitted by the server is "+num+"</p>"
+            );
+                console.log(data); //5
+            });
+
+        $('#form').submit(function(event){
+        socket.emit('posting_form', $( this ).serializeArray());
+        event.preventDefault();
+        //socket.emit('message', "Input");
+        //$('#Input').val('');
+        return false;
+      });
+     })
+    </script>
+</head>
+<body>
+    <h1>Fun with sockets</h1>
+<div id="updateMsg">
+
+</div>
+<form id = "form">
+    <p>Your Name: <input type="text" name="name" id="user_name"></p>
+    <p>Dojo Location:
+    <select class="form-control-sm" name="location">
+            <option>Seattle, WA</option>
+            <option>Los Angeles, CA</option>
+            <option>Silicon Valley, CA</option>
+    </select> </p>
+    Favorite Language:
+    <select class="form-control-sm text-right" name="language">
+            <option>Javascript</option>
+            <option>Python</option>
+            <option>C++</option>
+    </select> 
+    <p>Comment (optional):</p>
+    <textarea name="comment" cols="30" rows="10"></textarea>
+    <p><input type="submit" value="Submit"></p>
+
+</form>  
+</body>
+</html>

@@ -1,7 +1,5 @@
 const mongoose  = require('mongoose')
 
-
-
 const QuoteSchema = new mongoose.Schema({
     name: {type: String, required: true, minlength: 3},
     quote: {type: String, requited: true, minlength: 6}
