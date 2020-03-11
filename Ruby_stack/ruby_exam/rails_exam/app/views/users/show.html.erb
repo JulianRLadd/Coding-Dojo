@@ -3,19 +3,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<a href="/groups">Dashboard</a>
+<div class = "bg-light d-inline-block font-weight-bold border rounded-lg align-top m-1">
 
-<h3><%=@group.name%><h3>
+<h3>Title: <%=@group.name%><h3>
+<h3>Description: <%=@group.description%><h3>
     <% unless @group.users_joined.include?current_user %>
-        <form action="/joins/new" method="post">
+        <form action="/joins/new" method="post" class = "text-center">
         <input type="hidden" name="authenticity_token" value = "<%=form_authenticity_token%>">
         <input type="hidden" name="group_id" value = "<%=@group.id%>">
         <input type="submit" value="Join Group"/>
         </form>
     <% else %>
-        <a href="/joins/<%= @group.id %>" data-method="delete">Leave Group</a>
+        <a href="/joins/<%= @group.id %>" data-method="delete" class = "text-center">Leave Group</a>
     <% end %>
-<%=@group.description%>
 
 
 <h4>Created By:
@@ -24,9 +24,11 @@
         <% else %>
         <%=@group.user.first_name%> <%=@group.user.last_name%></h4>
     <% end %>
-<h4>Members</h4>
+<h4>Members:</h4>
 <% if @group.users_joined %>
 <%@group.users_joined.each do |r|%>
     <p><%= r.first_name %> <%= r.last_name %></p>
 <% end %>
 <% end %>
+</div>
+<a href="/groups" class = "d-block text-light">Go Back to Dashboard</a>

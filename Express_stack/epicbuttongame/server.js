@@ -18,7 +18,7 @@ io.on('connection', function (socket) { //2
   io.emit('new_count', counts); //3
   socket.on('thankyou', function (data) { //7
     console.log(data.msg); //8 (note: this log will be on your server's terminal)
-  });
+});
   socket.on('update_count', function () { //4
     console.log(counts)
     counts++;

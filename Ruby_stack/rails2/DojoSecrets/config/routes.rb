@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'likes/new' => 'users#like'
   delete 'secrets/:id' => 'users#destroy_secret'
   delete 'likes/:id' => 'users#unlike'
-  get 'secrets/' => 'users#index'
+  get '/secrets/' => 'users#index'
 
   match '*path'=> redirect('/sessions/new'), via: :get
   # The priority is based upon order of creation: first created -> highest priority.

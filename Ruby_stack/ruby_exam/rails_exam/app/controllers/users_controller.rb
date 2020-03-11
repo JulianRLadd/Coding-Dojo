@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @group = Group.create(group_params)
     if @group.valid?
       new_group = Group.last.id
-      @join = join.create(user_id: current_user.id, group_id: new_group)
+      @join = Join.create(user_id: current_user.id, group_id: new_group)
       redirect_to '/groups'
     else
       redirect_to '/groups',notice: @group.errors.full_messages
@@ -45,7 +45,7 @@ redirect_to '/groups'
 end
 def leave
   @join = Join.where(user_id: session[:user_id], group_id: params[:id])
-  @join.destroy
+  @join.destroy_all
 redirect_to '/groups'
 end
 
